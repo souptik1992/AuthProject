@@ -15,7 +15,9 @@
               <div class="down-content">
                 <a href="product-details.html"><h4>{{$product->proname}}</h4></a>
                 <h6><small><del>$ {{$product->size_three_price}} </del></small> $ {{$product->size_one_price}}</h6>
-                <div style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">{!! $product->description !!}</div>
+                <div style="white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;">{!! $product->description !!}</div>
               </div>
             </div>
           </div>

@@ -24,7 +24,9 @@
               <div class="down-content">
                 <a href="product-details.html"><h4>{{$product->proname}}</h4></a>
                 <h6><small><del>$ {{$product->size_three_price}} </del></small> $ {{$product->size_one_price}}</h6>
-                <p>{!! $product->description !!}</p>
+                <div style="white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;">{!! $product->description !!}</div>
               </div>
             </div>
           </div>
@@ -79,6 +81,17 @@
         </div>
       </nav>
     </header>
-
+    @push('script')
+ <script>
+    var max = 10;
+      $(".small2").each(function(){
+          fulltext = $(this).text();
+          if (fulltext.length > 8) {
+            $(this).text(fulltext.substr(0, max - 3));
+            $(this).append('...');
+          }
+      });
+    </script>
+ @endpush   
 
 @endsection
